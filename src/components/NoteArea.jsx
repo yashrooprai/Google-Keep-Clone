@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { IoIosAdd } from "react-icons/io";
 
-function CreateArea({ onAdd }) {
+function NoteArea({ onAdd }) {
   const [isExpanded, setExpanded] = useState(false);
 
   const [note, setNote] = useState({
@@ -62,4 +62,4 @@ function CreateArea({ onAdd }) {
   );
 }
 
-export default CreateArea;
+export default NoteArea;

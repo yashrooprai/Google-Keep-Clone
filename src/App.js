@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./styles.css";
 
 import Header from "./components/Header";
-import CreateArea from "./components/CreateArea";
+import NoteArea from "./components/NoteArea";
 import Note from "./components/Note";
 import NotesApp from "./components/NotesApp";
 
@@ -49,7 +49,7 @@ function App(props) {
     
     <div className="App">
       <Header />
-      <CreateArea onAdd={addNote} />
+      <NoteArea onAdd={addNote} />
       {notes.map((note, index) => (
         <Note
           key={index}
