@@ -6,8 +6,12 @@ function Note({ title, content, onDelete, onEdit, id }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedTitle, setEditedTitle] = useState(title);
   const [editedContent, setEditedContent] = useState(content);
-  const [bgColor, setBgColor] = useState("");
+  const [bgColor, setBgColor] = useState(() => {
+    const storedColor = localStorage.getItem(`note_${id}_color`);
+    return storedColor || "";
+  });
   const [showColors, setShowColors] = useState(false);
+  
 
   const handleEditClick = () => {
     setIsEditing(true);
@@ -16,6 +20,7 @@ function Note({ title, content, onDelete, onEdit, id }) {
   const handleColorChange = (color) => {
     setBgColor(color);
     setShowColors(false);
+    localStorage.setItem(`note_${id}_color`, color);
   };
 
 
